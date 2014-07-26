@@ -22,7 +22,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.synced_folder "../", "/var/www/", :nfs => { :mount_options => ["dmode=777", "fmode=777"] }
 
-  config.vm.provider "virtualbox" do |vb|     
+  config.vm.provider "virtualbox" do |vb|    
+     # nicer name :)
+     vb.name = config.vm.host_name
+
      # headless mode
      vb.gui = false
   
