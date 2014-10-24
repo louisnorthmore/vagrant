@@ -21,8 +21,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vbguest.auto_update = false
 
 
-  config.vm.host_name = "fcc.local"
-  config.vm.network "private_network", ip: "10.20.30.99"
+  config.vm.host_name = "debian.web"
+  config.vm.network "private_network", ip: "10.20.30.1"
 
   config.ssh.forward_agent = true
 
@@ -32,13 +32,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider "virtualbox" do |vb|
        # nicer name :)
-       vb.name = "fcc.local"
+       vb.name = "debian.web"
 
        # headless mode
        vb.gui = false
 
        # Use VBoxManage to customize the VM. For example to change memory:
-       vb.customize ["modifyvm", :id, "--memory", "1024"]
+       vb.customize ["modifyvm", :id, "--memory", "192"]
      end
 
 end
