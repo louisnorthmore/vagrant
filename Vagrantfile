@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "https://downloads.sourceforge.net/project/vagrantboxjessie/debian80.box"
 
   config.vm.host_name = "debian.web"
-  config.vm.network "private_network", ip: "10.20.30.1"
+  config.vm.network "private_network", ip: "10.20.30.69"
 
   config.ssh.forward_agent = true
 
@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        vb.name = "debian.web"
 
        # headless mode
-       vb.gui = false
+       vb.gui = true
 
        # Use VBoxManage to customize the VM. For example to change memory:
        vb.customize ["modifyvm", :id, "--memory", "192"]
