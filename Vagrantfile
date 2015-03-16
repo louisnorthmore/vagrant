@@ -11,16 +11,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "debian80"
   config.vm.box_url = "https://downloads.sourceforge.net/project/vagrantboxjessie/debian80.box"
 
-  config.vm.box_check_update = true
-  
-  config.vm.box_download_checksum = true
-  config.vm.box_download_checksum_type = "md5"
-
-  # set auto_update to false, if do NOT want to check the correct additions
-    # version when booting this machine
-    config.vbguest.auto_update = false
-
-
   config.vm.host_name = "debian.web"
   config.vm.network "private_network", ip: "10.20.30.1"
 
