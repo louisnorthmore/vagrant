@@ -11,8 +11,12 @@ apt-get install git -y
 echo "Installing MySQL"
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-apt-get update
 apt-get install -y mysql-server
 
-echo "Installing WWW & WP"
-apt-get install wordpress -y
+echo "Installing Nginx"
+apt-get install -y nginx
+
+echo "Installing PHP5"
+apt-get install -y php5-fpm php5-mysql
+
+/etc/init.d/nginx restart
