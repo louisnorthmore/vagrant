@@ -1,0 +1,13 @@
+deb http://http.debian.net/debian wheezy main
+deb-src http://http.debian.net/debian wheezy main
+
+#php56
+deb http://packages.dotdeb.org wheezy-php56 all
+deb-src http://packages.dotdeb.org wheezy-php56 all
+
+deb http://security.debian.org/ wheezy/updates main
+deb-src http://security.debian.org/ wheezy/updates main
+
+# wheezy-updates, previously known as 'volatile'
+deb http://http.debian.net/debian wheezy-updates main
+deb-src http://http.debian.net/debian wheezy-updates main
