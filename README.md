@@ -25,5 +25,4 @@ You can connect to MySQL over SSH. User: root Password: root
 
 vagrant up - Start the box
 vagrant halt - Stop the box
-
 vagrant ssh - Connect to the box via SSH

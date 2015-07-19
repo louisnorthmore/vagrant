@@ -3,7 +3,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-config.vm.provision "ansible" do |ansible|
+  config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/provision.yml"
   end
 
@@ -25,6 +25,6 @@ config.vm.provision "ansible" do |ansible|
 
        # Use VBoxManage to customize the VM. For example to change memory:
        vb.customize ["modifyvm", :id, "--memory", "128"]
-     end
+  end
 
 end

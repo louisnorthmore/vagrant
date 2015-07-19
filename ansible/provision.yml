@@ -4,24 +4,21 @@
 
   tasks:
 
-
-
-    - name: Essentials
-      apt: name={{ item }} state=latest
-      with_items:
-        - wget
-        - htop
-        - screen
-        - nmap
-
     - name: Add dotdeb key
       apt_key: url=http://www.dotdeb.org/dotdeb.gpg state=present
     - name: Setup APT sources
       template: src=sources.list dest=/etc/apt/sources.list
 
-
     - name: Update APT
       apt: update_cache=yes
+
+    - name: Essentials
+      apt: name={{ item }} state=latest
+      with_items:
+      - wget
+      - htop
+      - screen
+      - nmap
 
     - name: Install Git
       apt: name=git state=latest
@@ -38,15 +35,6 @@
 
     - name: Install Python mysqldb
       apt: name=python-mysqldb state=latest
-
- #   - name: update mysql root passwd
- #     mysql_user: name=root host={{ item }} password=root
- #     with_items:
- #       - "{{ ansible_hostname }}"
- #       - 127.0.0.1
- #       - ::1
- #       - localhost
- #     notify: restart mysql
 
     - name: Install PHP
       apt: name=php5-fpm state=latest
